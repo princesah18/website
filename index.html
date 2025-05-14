@@ -1,78 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday, My Love</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(#ffd1dc, #ffe4e1);
-      text-align: center;
-      padding: 40px;
-    }
-    h1 {
-      color: #e91e63;
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    .photo-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .photo-card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-    .photo-card:hover {
-      transform: scale(1.05);
-    }
-    .photo-card img {
-      max-width: 100%;
-      border-radius: 12px;
-    }
-    .caption {
-      margin-top: 10px;
-      font-size: 1.1em;
+      background: #fce4ec;
       color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #ff80ab;
+      color: white;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .photo {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .caption {
+      padding: 10px;
+      font-style: italic;
+      color: #555;
+    }
+
+    .video-section {
+      position: relative;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .video-section video {
+      width: 80%;
+      border-radius: 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .bubbles {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: floatUp 10s infinite ease-in;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) scale(1.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Happy Birthday, My Love 🎉💕</h1>
-  <p> just wanted to say some thing to you my Love </p>
 
-  <div class="photo-container">
-    <div class="photo-card">
-      <img src="atul .jpg" alt="Memory 1">
-      <div class="caption">The day I knew you're the one for me 💖 you are my world  My sweet heart</div>
+  <header>
+    <h1>very Happy Birthday, My Love 💖, my muskan, my princess</h1>
+    <p>Here are some of our favorite memories together...</p>
+  </header>
+
+  <div class="gallery">
+    <!-- Repeat this block for each photo -->
+    <div class="photo">
+      <img src="atull.jpg" alt="Photo 1">
+      <div class="caption">you are my wife my life my world </div>
     </div>
-    <div class="photo-card">
-      <img src="atull.jpg" alt="Memory 2">
-      <div class="caption">Every smile of yours lights up my world 🌟 you are my world my love</div>
+    <div class="photo">
+      <img src="atul5.jpg" alt="Photo 2">
+      <div class="caption">the unconditional love that u give me daily is  most beautifull thing </div>
     </div>
-    <div class="photo-card">
-      <img src="atul3.jpg" alt="Memory 3">
-      <div class="caption">my beautiful wife 💫 jabse tum ai ho mere life me. tabse mere life  me khusiyan hi khusiyan hai</div>
+    <div class="photo">
+      <img src="atul3.jpg" alt="Photo 3">
+      <div class="caption">u know what my love your Smiles always makes my day 😊</div>
     </div>
-    <div class="photo-card">
-      <img src="atul4.jpg" alt="Memory 4">
-      <div class="caption">Forever grateful to have you in my life ❤️</div>
+    <div class="photo">
+      <img src="atul6.jpg" alt="Photo 4">
+      <div class="caption">some lovely memories we both created </div>
     </div>
-    <div class="photo-card">
-      <img src="atul5.jpg" alt="Memory 4">
-      <div class="caption">tum gussa karo chahe pyar karo mai har paristiti me tumhe pyar hi karunga my Love ❤️</div>
+    <div class="photo">
+      <img src="photo4.jpg" alt="Photo 5">
+      <div class="caption">Laughs that last forever 💕</div>
     </div>
-    <div class="photo-card">
-      <img src="atul6.jpg" alt="Memory 4">
-      <div class="caption">you are my heart beat my Love ❤️</div>
+    <div class="photo">
+      <img src="photo5.jpg" alt="Photo 6">
+      <div class="caption">tum jaise ho waise  hi rahna ok change hone ki jarurat nahi haii mere liye ok tum aise hi mujhe bahut achhse lagti ho </div>
+    </div>
+    <div class="photo">
+      <img src="photo7.jpg" alt="Photo 7">
+      <div class="caption">you are a great suole my Love </div>
+    </div>
+    <div class="photo">
+      <img src="photo6.jpg" alt="Photo 8">
+      <div class="caption"> you are my world my preety muskan</div>
+    </div>
+    <div class="photo">
+      <img src="photo9.jpg" alt="Photo 9">
+      <div class="caption">you are my bestest gift by the god 🏖️</div>
+    </div>
+    <div class="photo">
+      <img src="photo10.jpg" alt="Photo 10">
+      <div class="caption">Just us forever 💍</div>
     </div>
   </div>
-  
+
+  <div class="video-section">
+    <div class="bubbles">
+      <!-- Generate multiple bubbles with random positions -->
+      <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
+      <div class="bubble" style="left: 25%; animation-delay: 2s;"></div>
+      <div class="bubble" style="left: 40%; animation-delay: 4s;"></div>
+      <div class="bubble" style="left: 60%; animation-delay: 1s;"></div>
+      <div class="bubble" style="left: 80%; animation-delay: 3s;"></div>
+      <div class="bubble" style="left: 50%; animation-delay: 5s;"></div>
+    </div>
+    <video controls>
+      <source src="video1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
 </body>
 </html>
