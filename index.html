@@ -1,96 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Portfolio</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fce4ec;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
       color: #333;
-      overflow-x: hidden;
     }
 
     header {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #ff80ab;
+      background: #333;
       color: white;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 30px;
-    }
-
-    .photo {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      padding-bottom: 10px;
-    }
-
-    .photo img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .caption {
-      padding: 10px;
-      font-style: italic;
-      color: #555;
-    }
-
-    .video-section {
-      position: relative;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .video-section video {
-      width: 80%;
-      border-radius: 20px;
-      z-index: 1;
-      position: relative;
-    }
-
-    .bubbles {
-      position: absolute;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
       top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 100%;
-      z-index: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 8px;
       overflow: hidden;
-      pointer-events: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
     }
 
-    .bubble {
-      position: absolute;
-      bottom: -100px;
-      width: 20px;
-      height: 20px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      animation: floatUp 10s infinite ease-in;
+    .project-card:hover {
+      transform: translateY(-5px);
     }
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      padding: 1rem;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
       }
-      100% {
-        transform: translateY(-1000px) scale(1.5);
-        opacity: 0;
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
       }
     }
   </style>
@@ -98,69 +123,60 @@
 <body>
 
   <header>
-    <h1>very Happy Birthday, My Love 💖, my world , my princess</h1>
-    <p>Here are some of our favorite memories together...</p>
+    <div class="logo">MyPortfolio</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="gallery">
-    <!-- Repeat this block for each photo -->
-    <div class="photo">
-      <img src="p.jpg" alt="Photo 1">
-      <div class="caption">you are my wife my life my world </div>
-    </div>
-    <div class="photo">
-      <img src="p5.jpg" alt="Photo 2">
-      <div class="caption">the unconditional love that u give me daily is  most beautifull thing </div>
-    </div>
-    <div class="photo">
-      <img src="p3.jpg" alt="Photo 3">
-      <div class="caption">u know what my love your Smiles always makes my day 😊</div>
-    </div>
-    <div class="photo">
-      <img src="p9.jpg" alt="Photo 4">
-      <div class="caption">some lovely memories we both created </div>
-    </div>
-    <div class="photo">
-      <img src="p6.jpg" alt="Photo 5">
-      <div class="caption">Laughs that last forever 💕</div>
-    </div>
-    <div class="photo">
-      <img src="p1.jpg" alt="Photo 6">
-      <div class="caption">tum jaise ho waise  hi rahna ok change hone ki jarurat nahi haii mere liye ok tum aise hi mujhe bahut achhse lagti ho </div>
-    </div>
-    <div class="photo">
-      <img src="p8.jpg" alt="Photo 7">
-      <div class="caption">you are a great suole my Love </div>
-    </div>
-    <div class="photo">
-      <img src="p2.jpg" alt="Photo 8">
-      <div class="caption"> you are my world my preety muskan</div>
-    </div>
-    <div class="photo">
-      <img src="p10.jpg" alt="Photo 10">
-      <div class="caption">you are my bestest gift by the god 🏖️</div>
-    </div>
-    <div class="photo">
-      <img src="p7.jpg" alt="Photo 10">
-      <div class="caption">Just us forever 💍</div>
-    </div>
-  </div>
+  <section id="home">
+    <h1>Welcome to My Portfolio</h1>
+    <p>I'm a passionate developer crafting digital experiences.</p>
+  </section>
 
-  <div class="video-section">
-    <div class="bubbles">
-      <!-- Generate multiple bubbles with random positions -->
-      <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
-      <div class="bubble" style="left: 25%; animation-delay: 2s;"></div>
-      <div class="bubble" style="left: 40%; animation-delay: 4s;"></div>
-      <div class="bubble" style="left: 60%; animation-delay: 1s;"></div>
-      <div class="bubble" style="left: 80%; animation-delay: 3s;"></div>
-      <div class="bubble" style="left: 50%; animation-delay: 5s;"></div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm a creative web developer with a love for clean design and elegant code.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="photo.jpg" alt="Project 1">
+        <h3>Project One</h3>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x150" alt="Project 2">
+        <h3>Project Two</h3>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x150" alt="Project 3">
+        <h3>Project Three</h3>
+      </div>
     </div>
-    <video controls>
-      <source src="v1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out via email at <a href="mailto:you@example.com">you@example.com</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-list").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
